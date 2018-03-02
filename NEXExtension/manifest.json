@@ -1,0 +1,38 @@
+{
+  "manifest_version": 2,
+
+  "name": "NEX",
+  "description": "NEX",
+  "version": "0.1.0",
+  "background": {
+    "page": "background.html",
+    "persistent": true
+  },
+  "browser_action": {
+    "default_icon": "assets/icons/nex_128.png",
+    "default_title": "NEX",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["file://*/*", "http://*/*", "https://*/*"],
+      "js": ["content.js"],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ],
+  "icons": {
+    "16": "assets/icons/nex_16.png",
+    "48": "assets/icons/nex_48.png",
+    "128": "assets/icons/nex_128.png"
+  },
+  "permissions": [
+    "activeTab",
+    "https://ajax.googleapis.com/",
+    "tabs",
+    "storage",
+    "http://*/*",
+    "https://*/*",
+    "activeTab"
+  ]
+}
